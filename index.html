@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MetaBite AI</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <div class="logo">
+            MetaBite AI
+        </div>
+
+        <ul>
+
+            <li><a href="#home">Home</a></li>
+
+            <li><a href="#finder">AI Finder</a></li>
+
+            <li><a href="#popular">Popular</a></li>
+
+            <li><a href="#features">Features</a></li>
+
+            <li><a href="#contact">Contact</a></li>
+
+        </ul>
+
+    </nav>
+
+    <!-- HERO -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+
+            <h1>
+                Discover Amazing Food In
+                <span>Mozambique</span>
+            </h1>
+
+            <p>
+                AI-powered restaurant discovery platform that recommends
+                restaurants, menus, prices, GPS directions, desserts,
+                and nearby food places based on your preferences.
+            </p>
+
+            <div class="hero-buttons">
+
+                <button onclick="scrollToFinder()">Start Finding Food</button>
+
+                <button class="secondary-btn" onclick="showFeatures()">Explore Features</button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- LIVE STATS -->
+
+    <section class="stats-section">
+
+        <div class="stat-box">
+            <h2>500+</h2>
+            <p>Restaurants</p>
+        </div>
+
+        <div class="stat-box">
+            <h2>20+</h2>
+            <p>Food Categories</p>
+        </div>
+
+        <div class="stat-box">
+            <h2>GPS</h2>
+            <p>Location Tracking</p>
+        </div>
+
+        <div class="stat-box">
+            <h2>AI</h2>
+            <p>Smart Recommendations</p>
+        </div>
+
+    </section>
+
+    <!-- AI FINDER -->
+
+    <section class="finder-section" id="finder">
+
+        <h2>MetaBite AI Finder</h2>
+
+        <div class="finder-container">
+
+            <div class="input-group">
+                <label>Choose Food Type</label>
+                <select id="foodType">
+                    <option value="burger">Hamburgers</option>
+                    <option value="pizza">Pizza</option>
+                    <option value="chicken">Chicken</option>
+                    <option value="fries">Fries</option>
+                    <option value="dessert">Desserts</option>
+                    <option value="seafood">Seafood</option>
+                    <option value="healthy">Healthy Food</option>
+                    <option value="traditional">Traditional Mozambican</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label>Budget (MZN)</label>
+                <input type="number" id="budget" placeholder="500">
+            </div>
+
+            <div class="input-group">
+                <label>Distance</label>
+                <select id="distance">
+                    <option value="1">1 km</option>
+                    <option value="3">3 km</option>
+                    <option value="5">5 km</option>
+                    <option value="10">10 km</option>
+                    <option value="20">20 km</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label>Your Mood</label>
+                <select id="mood">
+                    <option>Happy</option>
+                    <option>Energetic</option>
+                    <option>Tired</option>
+                    <option>Stressed</option>
+                    <option>Relaxed</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label>Want Dessert?</label>
+                <select id="dessert">
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label>Dining Preference</label>
+                <select id="delivery">
+                    <option>Dine In</option>
+                    <option>Takeaway</option>
+                    <option>Delivery</option>
+                </select>
+            </div>
+
+            <button class="generate-btn" onclick="generateRestaurant()">
+                Generate AI Restaurant
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- RESULTS -->
+
+    <section class="results-section">
+
+        <h2>AI Recommendations</h2>
+
+        <div class="results-container" id="resultsContainer"></div>
+
+    </section>
+
+    <!-- POPULAR -->
+
+    <section class="popular-section" id="popular">
+
+        <h2>Popular Restaurants In Mozambique</h2>
+
+        <div class="popular-grid">
+
+            <div class="popular-card">
+                <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9">
+                <h3>Costa do Sol</h3>
+            </div>
+
+            <div class="popular-card">
+                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38">
+                <h3>Mundo's</h3>
+            </div>
+
+            <div class="popular-card">
+                <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591">
+                <h3>Pizza Hut</h3>
+            </div>
+
+            <div class="popular-card">
+                <img src="https://images.unsplash.com/photo-1513639776629-7b61b0ac49cb">
+                <h3>KFC Mozambique</h3>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FEATURES -->
+
+    <section class="features-section" id="features">
+
+        <h2>Smart Features</h2>
+
+        <div class="features-grid">
+
+            <div class="feature-card"><h3>AI Recommendations</h3><p>Personalized restaurant suggestions.</p></div>
+            <div class="feature-card"><h3>GPS Navigation</h3><p>Accurate restaurant distances and directions.</p></div>
+            <div class="feature-card"><h3>Live Menus</h3><p>Connect directly to restaurant menus.</p></div>
+            <div class="feature-card"><h3>Budget Matching</h3><p>Restaurants matched to your budget.</p></div>
+            <div class="feature-card"><h3>Dessert Finder</h3><p>Discover dessert restaurants.</p></div>
+            <div class="feature-card"><h3>Food Delivery</h3><p>Supports takeaway and delivery options.</p></div>
+
+        </div>
+
+    </section>
+
+    <!-- MAP -->
+
+    <section class="map-section">
+
+        <h2>Restaurant Map</h2>
+
+        <div class="map-container">
+
+            <iframe src="https://www.google.com/maps?q=Maputo,Mozambique&output=embed"></iframe>
+
+        </div>
+
+    </section>
+
+    <!-- CONTACT -->
+
+    <section class="contact-section" id="contact">
+
+        <h2>Contact MetaBite AI</h2>
+
+        <p>Future Of AI Food Discovery In Mozambique</p>
+
+        <button onclick="showMessage()">Learn More</button>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+        <p>MetaBite AI © 2026 | Smart AI Restaurant Discovery Platform</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
